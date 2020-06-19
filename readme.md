@@ -1,10 +1,11 @@
 # Readme
 
-Run pgadmin in a container on Heroku (parses the `DATABASE_URL` from the environment variables).
+Run pgAdmin 4 in a container on Heroku by using the `DATABASE_URL` from the config:
 
 ```bash
 # get database url from an existing app
-export DATABASE_URL=`heroku config:get DATABASE_URL -a example-hasura`
+export DATABASE_URL=`heroku config:get DATABASE_URL -a hasura-heroku`
+
 export PGADMIN_DEFAULT_EMAIL=admin
 export PGADMIN_DEFAULT_PASSWORD=`python3 -c 'import secrets; print(secrets.token_urlsafe(16))'`
 
